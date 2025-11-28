@@ -28,7 +28,7 @@ ORDER BY total_parcels DESC;
 
 --On-Time vs Delayed Deliveries
 
-SELECT
+SELECT *
     SUM(CASE WHEN DATEDIFF(delivery_date, booking_date) <= 3 THEN 1 END) AS on_time,
     SUM(CASE WHEN DATEDIFF(delivery_date, booking_date) > 3 THEN 1 END) AS delayed
 FROM parcels;
